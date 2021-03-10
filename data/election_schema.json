@@ -1,0 +1,49 @@
+{
+    "presidential_schema": {
+        "candidate":"",
+        "vice_president":"",
+        "color":"",
+        "party":"",
+        "selected":"",
+        "electoral_votes":0,
+        "popular_votes":0,
+        "notes":""
+    },
+    "state_electoral_schema": {
+        "state":"",
+        "total_votes":0,
+        "total_electorals":0,
+        "electoral_votes.0":0,
+        "popular_votes.0":0,
+        "electoral_votes.1":0,
+        "popular_votes.1":0,
+        "electoral_votes.2":0,
+        "popular_votes.2":0,
+        "electoral_votes.3":0,
+        "popular_votes.3":0,
+        "electoral_votes.4":0,
+        "popular_votes.4":0,
+        "electoral_votes.5":0,
+        "popular_votes.5":0
+    },
+    "states":[
+        "alabama", "alaska", "arizona", "arkansas", "california", "colorado", 
+        "connecticut", "delaware", "dist. of col.", "florida", "georgia", "hawaii", 
+        "idaho", "illinois", "indiana", "iowa", "kansas", "kentucky", "louisiana", 
+        "maine", "maryland", "massachusetts", "michigan", "minnesota", "mississippi", 
+        "missouri", "montana", "nebraska", "nevada", "new hampshire", "new jersey",
+        "new mexico", "new york", "north carolina", "north dakota", "ohio", "oklahoma",
+        "oregon", "pennsylvania", "rhode island", "south carolina", "south dakota",
+        "tennessee", "texas", "utah", "vermont", "virginia", "washington", "west virginia",
+        "wisconsin", "wyoming"
+    ],
+    "yearsBAK":[
+        "2020", "2016","2012","2008","2004","2000","1996","1992","1988","1984","1980",
+        "1976","1972","1968","1964","1960","1956","1952","1948","1944","1940","1936",
+        "1932","1928","1924","1920","1916","1912","1908","1904","1900","1896","1892",
+        "1888","1884","1880","1876","1872","1868","1864","1860","1856","1852","1848",
+        "1844","1840","1836","1832","1828","1824","1820","1816","1812","1808","1804",
+        "1800","1796","1792","1789"
+    ],
+    "years":["2020", "2016","2012","2008" ]
+}
