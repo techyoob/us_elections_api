@@ -24,7 +24,7 @@ app.use('/charts', chartRoute);
 
 // home routes
 app.get('/', (req, res) => {
-    res.send('Hello world');
+    res.send('OK');
 });
 
 
