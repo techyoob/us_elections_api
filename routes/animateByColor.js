@@ -1,21 +1,17 @@
 const express = require('express');
 const router = express.Router();
 const presidential = require('../models/presidential.js');
-const TestySchema = require('../models/testy.js');
+const electionConfig = require('../data/election_schema.json')
 
 
-
-router.get('/:year', async  (req, res) => {
+router.get('/', async  (req, res) => {
 
     try { 
 
-        const testymodel = TestySchema()
 
-        const year = req.params.year;
-        const data = await testymodel.find()
+        // const year = req.params.year;
 
-
-        console.log(" Year  ", year, " and data is ", data);
+        // console.log(" Year  ", year, " and data is ", data);
 
 
 
@@ -26,7 +22,18 @@ router.get('/:year', async  (req, res) => {
 
         // console.log(" Year  ", year, " and data is ", data);
 
-        res.send(data);
+
+
+        for (year of electionConfig.years) {
+
+            const PresidentialModel = presidential(year)
+            const data = await PresidentialModel.find()
+            console.log(" for year ", year, "  data is ", data);
+        }
+
+        
+        res.send("done");
+        
     } catch(err) {
         console.log(" error is ", err);
     }
