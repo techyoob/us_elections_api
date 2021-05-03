@@ -23,8 +23,8 @@ router.get('/', async  (req, res) => {
         // console.log(" Year  ", year, " and data is ", data);
 
 
-
-        for (year of electionConfig.years) {
+        const result = [];
+        for ( year of electionConfig.years ) {
 
             const PresidentialModel = presidential(year)
             const data = await PresidentialModel.find()
