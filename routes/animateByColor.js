@@ -1,38 +1,34 @@
 const express = require('express');
 const router = express.Router();
 const presidential = require('../models/presidential.js');
-const electionConfig = require('../data/election_schema.json')
+const electoral = require('../models/electoral.js');
+const electionConfig = require('../data/election_schema.json');
 
 
 router.get('/', async  (req, res) => {
 
     try { 
 
-
-        // const year = req.params.year;
-
-        // console.log(" Year  ", year, " and data is ", data);
-
-
-
-        // const year = req.params.year;
-        // const PresidentialModel = presidential.PresidentialYearSchema(year)
-        // const data = await PresidentialModel.find()
-        // const presidentialYearDoc = new PresidentialModel({})
-
-        // console.log(" Year  ", year, " and data is ", data);
-
-
         const result = [];
         for ( year of electionConfig.years ) {
 
-            const PresidentialModel = presidential(year)
-            const data = await PresidentialModel.find()
-            console.log(" for year ", year, "  data is ", data);
+            
+            const ElectoralCollection = electoral(year)
+
+            const data = await ElectoralCollection.aggregate([
+                { $project : { _id : 0, winner: 1, state: 1} }
+              ])
+
+            const item = {
+                year:year,
+                states:data
+            }
+
+            result.push(item)
         }
 
         
-        res.send("done");
+        res.send(result);
         
     } catch(err) {
         console.log(" error is ", err);

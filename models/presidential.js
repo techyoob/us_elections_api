@@ -21,4 +21,4 @@ const mongoose = require('mongoose');
 }
 
 // exports.PresidentialYearSchema = PresidentialYearSchema
-module.export = PresidentialYearSchema
+module.exports = PresidentialYearSchema

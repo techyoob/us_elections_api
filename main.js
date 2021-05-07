@@ -22,7 +22,7 @@ const chartRoute = require("./routes/chartsByYear");
 app.use(cors());
 // app.use(bodyParser.json())
 
-app.use('/animate', animateRoute);
+
 app.use('/animateByColor', animateByColorRoute);
 app.use('/select', selectRoute);
 app.use('/charts', chartRoute);
